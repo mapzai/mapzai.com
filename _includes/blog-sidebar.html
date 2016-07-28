@@ -1,0 +1,25 @@
+            <aside id="blog-sidebar" class="blog-sidebar col-md-3 col-sm-4 col-xs-12 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
+                <section class="widget search">
+                    <h3 class="sr-only title">Search Blog</h3>
+                    <form class="search-blog-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search blog...">
+                        </div>
+                        <button type="submit" class="btn btn-cta btn-cta-secondary"><i class="fa fa-search"></i></button>
+                    </form>
+                </section><!--//search-->
+                <section class="widget recent-posts">
+                    <h3 class="title">Recent Posts</h3>
+                    <ul class="list-unstyled">
+{% for post in site.posts %}
+                        <li>
+                            <img class="thumb img-responsive" src="{{ post.thumb }}" alt="" />
+                            <span class="post-info">
+                                <a class="post-title" href="{{ post.url }}">{{ post.title }}</a><br />
+                                <span class="date">{{ post.date | date: "%e %B, %Y" }}</span>
+                            </span>
+                        </li>
+{% endfor %}
+                    </ul>
+                </section><!--//widget-->
+            </aside><!--//blog-side-bar-->

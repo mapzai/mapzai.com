@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+
+{% include head.html %}
+
+<body class="blog-post-page no-header-wrapper">   
+
+    {% include header.html %}
+
+    <div class="breadcrumbs container">
+        <ul class="breadcrumbs-list list-inline">
+            <li><a href="/">Home</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="/blog/">Blog</a><i class="fa fa-angle-right"></i></li>
+            <li class="current">{{ page.title }}</li>
+        </ul>
+    </div><!--//breadcrumbs-->
+       
+    <!-- ******Blog Post****** -->
+    <div class="blog-post-wrapper container">            
+        <div class="row">
+            <div class="blog-entry col-md-8 col-sm-8 col-xs-12">                 
+                <article class="post">
+                    <h2 class="title">{{ page.title }}</h2>
+                    <div class="meta">
+                        <ul class="meta-list list-inline">                                       
+                        	<li class="post-time post_date date updated">{{ page.date | date: "%e %B, %Y" }}</li>
+                    	</ul><!--//meta-list-->                           	
+                    </div><!--meta-->
+
+                    {{ content }}
+                    
+                    <div class="clearfix"></div>
+
+<!--                    <nav class="post-nav">
+    						<span class="nav-previous"><a href="#" rel="prev"><i class="fa fa-long-arrow-left"></i>Previous</a></span>
+    						<span class="nav-next"><a href="#" rel="next">Next<i class="fa fa-long-arrow-right"></i></a></span>
+    				</nav>-->
+                    <!--//post-nav-->
+
+                    <!-- Comments would go here -->
+
+                </article><!--//post-->                                      
+            </div><!--//blog-entry-->
+
+        {% include blog-sidebar.html %}
+
+        </div><!--//row-->
+    </div><!--//blog-->
+
+    {% include footer.html %}
+</body>
+</html> 
+

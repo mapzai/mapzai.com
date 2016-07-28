@@ -1,0 +1,51 @@
+---
+layout: blog
+title: Mapzai Blog
+permalink: /blog/
+---
+       
+
+        <section class="promo section">
+            <div class="container text-center">                
+                <h2 class="title">Mapzai Blog</h2>
+                <p class="intro">Chronicles of our startup journey, maps, cartography, data, analytics and programming</p>
+            </div><!--//container-->
+        </section><!--//promo-->
+    </div><!--//header-wrapper-->
+
+    <!-- ******Blog list Section****** -->
+    <section id="blog-list" class="blog-list section">
+        <div class="container">
+
+{% for post in site.posts %}
+            <article class="item">                
+                <div class="row">
+                    <h3 class="post-title col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    <div class="clearfix"></div>
+                    <div class="meta col-md-2 col-sm-3 col-xs-12 text-right">
+                        <ul class="meta-list list-unstyled">                                       
+                        	<li class="post-time post_date date updated">
+                        	    <span class="date">{{ post.date | date: "%d" }}</span>
+                        	    <span class="month">{{ post.date | date: "%b" }}</span>
+                            </li>
+                        	<li class="post-author"><a href="#">&nbsp;</a></li>
+                    	</ul><!--//meta-list-->                           	
+                    </div><!--//meta-list-->                    
+                    <div class="content-wrapper col-md-10 col-sm-9 col-xs-12">
+                        <figure class="figure">
+                            <a href="{{ post.url }}"><img class="img-responsive" src="{{ post.img.large }}" alt=""></a>
+                        </figure>
+                        <div class="content">
+                            <div class="desc">
+                                <p>{{ post.excerpt }}</p>
+                                <a class="read-more" href="{{ post.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
+                            </div><!--//desc-->
+                        </div><!--//content-->
+                    </div><!--//content-wrapper-->   
+                </div><!--//row-->            
+            </article><!--//item-->
+{% endfor %}
+        </div><!--//container-->
+    </section><!--//blog-list--> 
